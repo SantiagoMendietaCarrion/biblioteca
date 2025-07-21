@@ -1,0 +1,13 @@
+<h1>Lista de Categorias</h1>
+
+<form method="GET">{% csrf_token %}
+    <input type="number" min="1" id="kword" name="kword" placeholder="Ingrese el ID del autor">
+    <button type="submit">Consultar</button>
+</form>
+
+<ul>
+    <p>Categorías: </p>
+    {% for c in lista_categorias %}
+        <li>{{ c.nombre }} </li>
+    {% endfor %}
+</ul>
